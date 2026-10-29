@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVENGERS Sci-Fi Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js Library for 3D graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Fullscreen Calculator Interface -->
+    <div class="calculator-container">
+        <div class="hud-header">
+            <span class="hud-title">SYSTEM // STARK_SCIENTIFIC_V3.0</span>
+            <span class="hud-status">STATUS: ONLINE</span>
+        </div>
+        
+        <div class="display-container">
+            <div id="sub-display"></div>
+            <input type="text" id="display" placeholder="0" readonly>
+        </div>
+
+        <div class="buttons-grid">
+            <!-- Scientific & Advanced Operators -->
+            <button class="btn btn-sci" onclick="appendFunction('Math.sin(')">sin</button>
+            <button class="btn btn-sci" onclick="appendFunction('Math.cos(')">cos</button>
+            <button class="btn btn-sci" onclick="appendFunction('Math.tan(')">tan</button>
+            <button class="btn btn-sci" onclick="appendFunction('Math.log10(')">log</button>
+            
+            <button class="btn btn-sci" onclick="appendFunction('Math.sqrt(')">√</button>
+            <button class="btn btn-sci" onclick="appendValue('**')">x^y</button>
+            <button class="btn btn-sci" onclick="appendValue('Math.PI')">π</button>
+            <button class="btn btn-action" onclick="clearDisplay()">AC</button>
+
+            <button class="btn btn-action" onclick="deleteChar()">DEL</button>
+            <button class="btn btn-operator" onclick="appendValue('%')">%</button>
+            <button class="btn btn-operator" onclick="appendValue('/')">÷</button>
+            <button class="btn btn-operator" onclick="appendValue('*')">×</button>
+
+            <button class="btn" onclick="appendValue('7')">7</button>
+            <button class="btn" onclick="appendValue('8')">8</button>
+            <button class="btn" onclick="appendValue('9')">9</button>
+            <button class="btn btn-operator" onclick="appendValue('-')">-</button>
+
+            <button class="btn" onclick="appendValue('4')">4</button>
+            <button class="btn" onclick="appendValue('5')">5</button>
+            <button class="btn" onclick="appendValue('6')">6</button>
+            <button class="btn btn-operator" onclick="appendValue('+')">+</button>
+
+            <button class="btn" onclick="appendValue('1')">1</button>
+            <button class="btn" onclick="appendValue('2')">2</button>
+            <button class="btn" onclick="appendValue('3')">3</button>
+            <button class="btn btn-equal" onclick="calculate()">=</button>
+
+            <button class="btn" onclick="appendValue('00')">00</button>
+            <button class="btn" onclick="appendValue('0')">0</button>
+            <button class="btn" onclick="appendValue('.')">.</button>
+            <button class="btn btn-sci" onclick="appendValue(')')">)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
